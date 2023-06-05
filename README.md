@@ -7,6 +7,7 @@ Todos:
 +   [ ] Add tl;dr from cloud computing class with Stelios
 +   [ ] Add VS Code command `code`
 +   [ ] Add GitHub Desktop commands `gh`
++   [ ] Adds `curl` notes
 
 ## Zsh shell (configuration)
 
