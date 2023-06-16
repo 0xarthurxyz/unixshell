@@ -686,6 +686,14 @@ Source: [ToolsQA](https://www.toolsqa.com/git/git-delete-tag/)
 git submodule add <URL>
 ```
 
+### Add submodule to repo in certain location
+
+```zsh
+git submodule add <git@github ...> <folder-structure>/<directory-name>/
+```
+
+Source: [Stackoverflow](https://stackoverflow.com/a/9035930)
+
 ### Remove submodule from repo
 
 * this command removes the reference to the submodule in .gitmodules.
