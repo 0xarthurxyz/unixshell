@@ -696,14 +696,24 @@ Source: [Stackoverflow](https://stackoverflow.com/a/9035930)
 
 ### Remove submodule from repo
 
-* this command removes the reference to the submodule in .gitmodules.
-* you might need to remove it from .git/config (if it still shows up)
++   **Run `git rm <path-to-submodule>`, and commit**.
 
-```bash
-git rm <path_to_module>
-```
+This removes the filetree at `<path-to-submodule>`, and the submodule's entry in the `.gitmodules` 
+file. *I.e.* all traces of the submodule in your repository proper are removed.
 
-_Source: [Stack Overflow](https://stackoverflow.com/a/1260982)_ (linked from [Atlassian](https://www.atlassian.com/git/articles/core-concept-workflows-and-tips))
+As [the docs note](https://git-scm.com/docs/gitsubmodules) however, the `.git` dir of the 
+submodule is kept around (in the `modules/` directory of the main project's `.git` dir), 
+"**to make it possible to checkout past commits without requiring fetching from 
+another repository**". If you nonetheless want to remove this info, manually delete the submodule's 
+directory in `.git/modules/`, and remove the submodule's entry in the file `.git/config`. 
+
+These steps can be automated using the commands
+
++   `rm -rf .git/modules/<path-to-submodule>`, and
++   `git config --remove-section submodule.<path-to-submodule>`.
+
+_Source: [Stack Overflow](https://stackoverflow.com/a/1260982)_ (linked from 
+[Atlassian](https://www.atlassian.com/git/articles/core-concept-workflows-and-tips))
 
 ## Signing commits (Github `verified`)
 
