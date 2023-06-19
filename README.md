@@ -316,7 +316,7 @@ Go into 'settings' on GitHub and change the name there manually.
 > git remote set-url origin new_url
 > ```
 
-## Staging
+### Staging parts of a file
 
 Source: [Stack Overflow](https://stackoverflow.com/a/1085191/21371720)
 
@@ -358,8 +358,6 @@ Afterwards, you can use:
 + `git diff --staged` to check that you staged the correct changes
 + `git reset -p` to unstage mistakenly added hunks
 + `git commit -v` to view your commit while you edit the commit message.
-
-## Branches
 
 ### List local branches
 
@@ -471,7 +469,7 @@ git push origin :master
 
 Source: [The easy way to rename "master" to "main" in git and GitHub](https://www.cds.caltech.edu/~mhucka/blog/posts/2020-07-19/renaming-your-master-branch-in-git/) and [GitHub Gist by Comevius](ttps://gist.github.com/ccopsey/9866a0bcb0b39ade04fe#gistcomment-3350164)
 
-## Reset local branch to specific commit (e.g. HEAD)
+### Reset local branch to specific commit (e.g. HEAD)
 
 Replacing all branch history/contents (undo commit):
 
@@ -523,8 +521,6 @@ git merge origin/main  # merges changes from main with <your-branch>
 
 Source: [Stack Overflow](https://stackoverflow.com/a/20103414)
 
-## Pull requests (PR)
-
 ### Add additional commit to existing PR
 
 For example, after feedback or PR Review:
@@ -535,8 +531,6 @@ git push -f origin HEAD
 ```
 
 Source: [Stack Overflow](https://stackoverflow.com/a/61938071)
-
-## Tags
 
 ### Listing Your Tags
 
@@ -710,8 +704,6 @@ git push --force origin <tag_name_to_update>
 
 Source: [ToolsQA](https://www.toolsqa.com/git/git-delete-tag/)
 
-## Submodules
-
 ### Add submodule to repo
 
 ```bash
@@ -747,7 +739,7 @@ These steps can be automated using the commands
 _Source: [Stack Overflow](https://stackoverflow.com/a/1260982)_ (linked from 
 [Atlassian](https://www.atlassian.com/git/articles/core-concept-workflows-and-tips))
 
-## Signing commits (Github `verified`)
+### Signing commits (Github `verified`)
 
 > To configure your Git client to sign commits by default for a local repository, in Git versions 2.0.0 and above, run `git config commit.gpgsign true`. To sign all commits by default in any local repository on your computer, run `git config --global commit.gpgsign true`.
 >
