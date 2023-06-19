@@ -1,21 +1,14 @@
-# CLI (Cheat Sheet)
+# ✨ CLI (Cheat Sheet)
 
 This is a cheatsheet on various CLI commands (mostly notes-to-self). They are incomplete by default.
 
-Todos:
+## Unix commands
 
-+   [ ] Add tl;dr from cloud computing class with Stelios
-+   [ ] Add VS Code command `code`
-+   [ ] Add GitHub Desktop commands `gh`
-+   [ ] Adds `curl` notes
-
-## Zsh shell (configuration)
+### Zsh shell (configuration)
 
 See `code ~/.zshrc`
 
 Source: [dev.to > Customizing my Zsh Prompt](https://dev.to/cassidoo/customizing-my-zsh-prompt-3417)
-
-## Unix commands
 
 I borrowed a few commands from [0nn0/terminal-mac-cheatsheet/README.markdown](https://github.com/0nn0/terminal-mac-cheatsheet)
 
@@ -761,3 +754,12 @@ Further instructions:
 * [Associating an email with your GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key)
 * [Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 * [Signing tags](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-tags)
+
+## Next 
+
+Todos:
+
++   [ ] Add tl;dr from cloud computing class with Stelios
++   [ ] Add VS Code command `code`
++   [ ] Add GitHub Desktop commands `gh`
++   [ ] Adds `curl` notes
