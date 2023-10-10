@@ -755,6 +755,20 @@ Further instructions:
 * [Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 * [Signing tags](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-tags)
 
+### List files tracked by git
+
+```sh
+git ls-tree --full-tree --name-only -r HEAD
+```
+
+- `--full-tree` makes the command run as if you were in the repo's root directory.
+- `-r` recurses into subdirectories. Combined with `--full-tree` this gives you all committed, tracked files.
+- `--name-only` removes SHA / permission info for when you just want the file paths.
+- `HEAD` specifies which branch you want the list of tracked, committed files for. 
+  `HEAD` is the pointer for the commit you have checked out currently.
+
+Source: [dev.to](https://dev.to/serhatteker/list-files-tracked-by-git-5gcb)
+
 ## Next 
 
 Todos:
