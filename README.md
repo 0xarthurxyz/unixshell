@@ -16,6 +16,29 @@ Source: [dev.to > Customizing my Zsh Prompt](https://dev.to/cassidoo/customizing
 I borrowed a few commands from
 [0nn0/terminal-mac-cheatsheet/README.markdown](https://github.com/0nn0/terminal-mac-cheatsheet)
 
+
+### List and kill processes
+
+From [wikipedia](https://en.wikipedia.org/wiki/Top_(software)):
+
+> `top` (table of processes) is a task manager or system monitor program,
+> found in many Unix-like operating systems, that displays information
+> about CPU and memory utilization.
+
+```sh
+$ top
+```
+
+Find the PID (process identification number) you want to kill and use `kill-9 <PID>`.
+
+For example::
+
+```sh
+kill -9 27201
+```
+
+Source: [setapp.com](https://setapp.com/how-to/how-to-view-and-kill-processes-on-mac)
+
 ### Create directory: `mkdir`
 
 ```bash
