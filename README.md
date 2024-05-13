@@ -139,15 +139,6 @@ Only if `new_location` **is** already a folder.
 
 `head [file].[extension]`
 
-## Next
-
-Todos:
-
-- [ ] Add tl;dr from cloud computing class with Stelios
-- [ ] Add VS Code command `code`
-- [ ] Add GitHub Desktop commands `gh`
-- [ ] Adds `curl` notes
-
 ### `#!/bin/bash`
 
 Source: ChatGPT
