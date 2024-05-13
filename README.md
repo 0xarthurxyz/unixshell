@@ -174,3 +174,64 @@ echo "Hello, world!"
 When you make this script executable and run it, the system reads the first line, sees
 `#!/bin/bash`, and invokes `/bin/bash` to run the script. This ensures that the script is executed
 in the Bash shell, even if the user is currently using a different shell like `zsh` or `ksh`.
+
+### `nc` (netcat)
+
+Source: Copilot
+
+`nc` is a command-line utility for data transfer over networks using TCP or UDP. It's also known as
+netcat.
+
+In the context of a shell script, `nc` could be used for a variety of tasks such as port scanning,
+transferring files, or setting up network sockets for testing. However, without additional arguments
+or context, it's hard to determine the exact purpose of this `nc` command in your script.
+
+If you're seeing this command in isolation, it's likely a placeholder or an error, as `nc` requires
+additional parameters to function correctly. For example, to open a TCP connection to a remote host,
+you would use `nc` followed by the hostname and the port number, like so: `nc hostname 1234`.
+
+For example:
+
+```sh
+if nc -z localhost $ANVIL_PORT; then
+  echo "Port already used"
+  kill $(lsof -i tcp:$ANVIL_PORT | tail -n 1 | awk '{print $2}')
+  echo "Killed previous Anvil"
+fi
+```
+
+In the context of this shell script, it checks if a process is running on a specific port
+(`$ANVIL_PORT`) on the localhost. If a process is found, it kills that process.
+
+Here's a step-by-step explanation:
+
+1. `nc -z localhost $ANVIL_PORT`: The `nc` command is used with the `-z` option to scan for
+   listening daemons, without sending any data to them. It checks if there's a process listening on
+   the port specified by `$ANVIL_PORT` on `localhost`.
+
+2. `if nc -z localhost $ANVIL_PORT; then`: If the `nc` command succeeds (i.e., a process is found
+   listening on the specified port), the script proceeds with the commands inside the `if` block.
+
+3. `echo "Port already used"`: This line outputs a message indicating that the port is already in
+   use.
+
+4. `kill $(lsof -i tcp:$ANVIL_PORT | tail -n 1 | awk '{print $2}')`: This line kills the process
+   that's using the port. Here's how it works:
+
+   - `lsof -i tcp:$ANVIL_PORT`: The `lsof` command is used to list all the processes listening on
+     the specified port.
+   - `tail -n 1`: This command gets the last line of the output from `lsof`, which should be the
+     process using the port.
+   - `awk '{print $2}'`: This command extracts the second field from the output line, which should
+     be the process ID (PID).
+   - `kill $(...)`: This command sends a SIGTERM signal to the process with the PID obtained from
+     the previous commands, effectively killing the process.
+
+5. `echo "Killed previous Anvil"`: This line outputs a message indicating that the previous process
+   (presumably an instance of Anvil) has been killed.
+
+6. `fi`: This ends the `if` block.
+
+In summary, this script checks if a process is running on a specific port and, if so, kills it. This
+is typically used to ensure that a port is free before starting a new process that needs to listen
+on that port.
