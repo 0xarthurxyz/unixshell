@@ -250,3 +250,26 @@ Hello\nworld
 ```
 
 Source: [linuxhandbook.com](https://linuxhandbook.com/echo-newline-bash/)
+
+### `set -euo pipefail` (file setting)
+
+Source: Github Copilot
+
+For example:
+
+```sh
+#!/usr/bin/env bash
+set -euo pipefail
+```
+
+Source: [`migrations_sol/deploy_precompiles.sh`](https://github.com/celo-org/celo-monorepo/blob/545efbc0f77b9cb7943c34ae0b038d391356668a/packages/protocol/migrations_sol/deploy_precompiles.sh#L1-L3)
+
+The line `set -euo pipefail` is a common setting in bash scripts to make them more robust and fail-safe. It sets three shell options that change the script's behavior in the face of errors:
+
+1.  `-e` or `errexit`: This option causes the shell to exit if any invoked command exits with a non-zero status, which is the convention for indicating errors in Unix-like operating systems. If this option is not set, the script would continue to execute subsequent commands even if a command fails, which could lead to unpredictable results or hard-to-diagnose errors.
+
+2.  `-u` or `nounset`: This option causes the shell to treat unset variables as an error and exit immediately. This can help catch typos or other errors related to variables. Without this option, the shell would treat unset variables as if they were set to an empty string.
+
+3.  `-o pipefail`: This option causes a pipeline (a sequence of commands separated by `|` characters) to fail if any of the commands fail, not just the last one. By default, a pipeline's exit status (which determines whether it's considered to have succeeded or failed) is the exit status of the last command. This option is useful for catching failures in any part of the pipeline.
+
+In summary, `set -euo pipefail` is a way to make the script fail fast -- that is, to halt execution as soon as anything goes wrong, rather than trying to soldier on in the face of errors. This makes errors more visible and helps prevent them from having knock-on effects later in the script.
