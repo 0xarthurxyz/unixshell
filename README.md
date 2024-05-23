@@ -235,3 +235,18 @@ Here's a step-by-step explanation:
 In summary, this script checks if a process is running on a specific port and, if so, kills it. This
 is typically used to ensure that a port is free before starting a new process that needs to listen
 on that port.
+
+### `echo`
+
+`-e` interpret escape sequences
+
+```sh
+$ echo -e 'Hello\nworld'
+Hello
+world
+
+$ echo 'Hello\nworld'
+Hello\nworld
+```
+
+Source: [linuxhandbook.com](https://linuxhandbook.com/echo-newline-bash/)
