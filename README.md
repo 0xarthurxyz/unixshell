@@ -273,3 +273,16 @@ The line `set -euo pipefail` is a common setting in bash scripts to make them 
 3.  `-o pipefail`: This option causes a pipeline (a sequence of commands separated by `|` characters) to fail if any of the commands fail, not just the last one. By default, a pipeline's exit status (which determines whether it's considered to have succeeded or failed) is the exit status of the last command. This option is useful for catching failures in any part of the pipeline.
 
 In summary, `set -euo pipefail` is a way to make the script fail fast -- that is, to halt execution as soon as anything goes wrong, rather than trying to soldier on in the face of errors. This makes errors more visible and helps prevent them from having knock-on effects later in the script.
+
+### `chmod`
+
+For example:
+
+```sh
+chmod +x {{script_name}}.sh
+```
+
+> **chmod** (_**ch**ange **mod**e_) is the command used to change the access permissions and the 
+> special mode flags of files and directories.
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Chmod)
